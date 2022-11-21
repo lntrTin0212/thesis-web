@@ -1,0 +1,64 @@
+<div class="profile">
+  <div class="wrapper">
+    <div class="avatar">
+      <div class="img">
+        <div class="img-wrapper">
+          <img src="./../../../../assets//avatar.jpg" alt="">
+        </div>
+        <div class="img-hover">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="image" class="img-icon"></mat-icon>
+        </div>
+      </div>
+      <div class="name">
+        <h1>test name</h1>
+      </div>
+    </div>
+    <div class="form-container">
+      <form class="example-form" [formGroup]="formControl" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>id</mat-label>
+          <input type="text" matInput [errorStateMatcher]="matcher" value="{{infoUser._id }}" disabled>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Role</mat-label>
+          <input type="email" matInput [errorStateMatcher]="matcher" disabled value="{{infoUser.role}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com"
+            formControlName="email">
+          <mat-error *ngIf="formControl.hasError('email') && !formControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="formControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button
+        mat-button (click)="openDialog()"
+        class="change-btn"
+        mat-raised-button 
+        >
+        Change Password
+      </button>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput [errorStateMatcher]="matcher" formControlName="name">
+          <mat-error *ngIf="formControl.hasError('email') && !formControl.hasError('required')">
+            Please enter a valid Name
+          </mat-error>
+          <mat-error *ngIf="formControl.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+
+      <button
+        type="submit"
+        mat-raised-button color="primary"
+        class="submit-btn"
+        >Edit</button>
+    </div>
+  </div>
+</div>

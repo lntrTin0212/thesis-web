@@ -1,0 +1,71 @@
+.back-button {
+    background-color: unset;
+    border: unset;
+    width: 40px;
+    height: 40px;
+    .back-icon {
+        font-size: 40px;
+        width: 100%;
+        cursor: pointer;
+        height: 100%;
+        transition: .2s linear;
+        padding: 20px;
+    }
+    .back-icon:hover {
+        margin-right: 10px;
+        background-color: #3f51b5;
+        color: white;
+        border-radius: 10%;
+    }
+}
+.container {
+    display: flex;
+    padding: 0 40px;
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .mat-form-field  {
+                width: 80%;
+                margin: 20px 0;
+            }
+        }
+    }
+    .feature {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        .preview-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            .mat-card {
+                width: 100%;
+            }
+            .pre-img {
+                height: 100%;
+                .mat-card-content {
+                    text-align: center;
+                }
+                img {
+                    width: 50%;
+                    text-align: center;
+                }
+                
+            }
+        }
+        .mat-accordion {
+            width: 100%;
+        }
+    }
+}
+.container-img {
+    height: 450px;
+}

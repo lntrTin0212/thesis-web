@@ -1,0 +1,121 @@
+<button (click)="handleBack()" class="back-button">
+    <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="arrow_back"
+        class="back-icon"
+        >
+    
+    </mat-icon>
+</button>
+<div class="container">
+    <div class="form-wrapper">
+        <form [formGroup]='form' (ngSubmit)="onSubmit()" class="form">
+            <mat-form-field class="example-form-field">
+                <mat-label>Vocabulary</mat-label>
+                <input matInput type="text" formControlName="vocab">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field">
+                <mat-label>Meaning</mat-label>
+                <input matInput type="text" formControlName="hasMeaning">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field">
+                <mat-label>AE Audio</mat-label>
+                <input
+                    matInput type="text"
+                    formControlName="hasAEAudio"
+                    (change)="onAEchange($event)"
+                    >
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field">
+                <mat-label>BE Audio</mat-label>
+                <input 
+                    matInput
+                    type="text"
+                    formControlName="hasBEAudio"
+                    (change)="onBEchange($event)"
+                    >
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field">
+                <mat-label>AE Pronunciation</mat-label>
+                <input matInput type="text" formControlName="hasAEpronunciation">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field">
+                <mat-label>BE Pronunciation</mat-label>
+                <input matInput type="text" formControlName="hasBEpronunciation">
+            </mat-form-field>
+
+            <mat-form-field class="example-form-field">
+                <mat-label>Image</mat-label>
+                <input
+                    matInput
+                    type="text"
+                    formControlName="hasImage"
+                    (change)="onImageChange($event)"
+
+                    >
+
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary">
+                Save
+            </button>
+
+        </form>
+    </div>
+    <div class="feature">
+        <div class="preview-container container-img">
+            <mat-card class="pre-img">
+                <mat-card-header>
+                    <mat-card-subtitle>Image preview</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <img class="img-show" [src]="img" alt="">
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-footer>
+                    <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div class="preview-container">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-subtitle>AE Audio preview</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <audio controls class="aeAudioTab">
+                        <source class="aeAudio" [src]="aeAudio"
+                            type="audio/mpeg">
+                    </audio>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-footer>
+                    <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div class="preview-container">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-subtitle>BE Audio preview</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <audio controls class="beAudioTab">
+                        <source class="beAudio" [src]="beAudio"
+                            type="audio/mpeg">
+                    </audio>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-footer>
+                    <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

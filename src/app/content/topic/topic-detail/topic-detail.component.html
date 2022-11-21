@@ -1,0 +1,79 @@
+<button (click)="handleBack()" class="back-button">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back" class="back-icon">
+
+    </mat-icon>
+</button>
+<div class="container">
+    <div class="vocab-wrapper">
+        <div class="topic-title">{{topicName}}</div>
+        <div class="tabs">
+            <mat-tab-group mat-align-tabs="center" animationDuration="0ms" (selectedTabChange)="onChangeTab($event)"
+                [(selectedIndex)]="tabIndex" [(ngModel)]="tabIndex">
+                <ng-container *ngIf="haveSubclass && haveSubclass == true">
+                    <mat-tab *ngFor="let topicTab of dataSource.data;let idx = index" [label]="topicTab.subClassName">
+                        <div class="vocab-list">
+                            <div class="mat-elevation-z8">
+                                <div *ngFor="let i of topicTab.vocabs" class="vocab-item">
+                                    <a (click)="navigateToDeail(i)">
+                                        {{i}}
+                                    </a>
+                                    <div class="option-wrapper">
+                                        <button class="detail-icon">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                fontIcon="description">
+                                            </mat-icon>
+                                        </button>
+                                        <button
+                                            class="delete-icon"
+                                            (click)="onDelete(i)"    
+                                        >
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                fontIcon="delete">
+                                            </mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                                aria-label="Select page of periodic elements">
+                            </mat-paginator> -->
+                            </div>
+
+                        </div>
+
+                    </mat-tab>
+                </ng-container>
+
+                <ng-container *ngIf="!haveSubclass">
+                    <mat-tab [label]="topicName">
+                        <div class="vocab-list">
+                            <div class="mat-elevation-z8">
+                                <div class="vocab-item" *ngFor="let subclass of dataSource.data;
+                                    let idx = index">
+                                    <a routerLink="{{subclass}}">
+                                        {{subclass}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </ng-container>
+
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
+<!-- <div class="vocab-list">
+        <div class="vocab-item" *ngFor="let vocab of subclass['vocabs']; let idx = index">
+            <p>{{idx}}</p>
+            <p>{{vocab}}</p>
+            <div class="edit">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit">
+                </mat-icon>
+            </div>
+            <div class="delete">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete">
+                </mat-icon>
+            </div>
+        </div>
+    </div> -->

@@ -1,0 +1,101 @@
+.profile {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .avatar {
+            margin-bottom: 30px;
+
+            .img {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+
+                .img-wrapper {
+                    height: 100%;
+                    width: 100%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        object-position: center;
+                    }
+                }
+                .img-hover {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    transition: .15s ease-in;
+                    .img-icon {
+                        opacity: 0;
+                        color: white;
+                        font-size: 40px;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+            .img:hover .img-hover {
+             
+                background-color: rgba($color: #000000, $alpha: 0.4);
+                cursor: pointer;
+
+                .img-icon {
+                    opacity: 1;
+                }
+            }
+
+            .name {
+                padding: 16px 0;
+
+                h1 {
+                    text-align: center;
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .change-btn {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .submit-btn {
+            width: 50%;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                margin-bottom: 30px;
+            }
+
+            .example-form {
+                display: flex;
+                width: 50%;
+                flex-direction: column;
+
+                .example-full-width {}
+            }
+        }
+    }
+
+}

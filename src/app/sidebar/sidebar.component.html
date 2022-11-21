@@ -1,0 +1,27 @@
+<div class="sidebar-container">
+    <div class="create-button">
+        <button (click)="onNavigate()" mat-raised-button color="primary">
+            create new vocab
+        </button>
+    </div>
+    <div class="sidebar-title">
+        <h1>Kidlearn</h1>
+    </div>
+    <mat-selection-list #shoes [multiple]="false">
+        <a routerLink="user" class="sidebar-link">
+            <mat-list-option>
+                User
+            </mat-list-option>
+        </a>
+        <a routerLink="topic" class="sidebar-link">
+            <mat-list-option>
+                Topics
+              </mat-list-option>
+        </a>
+        <a routerLink="game" class="sidebar-link">
+            <mat-list-option>
+                Games
+              </mat-list-option>
+        </a>
+    </mat-selection-list>
+</div>

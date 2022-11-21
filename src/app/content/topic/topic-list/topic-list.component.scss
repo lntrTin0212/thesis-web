@@ -1,0 +1,23 @@
+
+table {
+    width: 100%;
+    .mat-cell  {
+      padding: 0;
+    }
+    .topic-link {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      line-height: 50px;
+      transition: .2s ease;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 26px;
+      text-decoration: none;
+      color: black;
+    }
+    .topic-link:hover {
+      background-color: #ddd;
+    }
+  }

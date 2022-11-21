@@ -1,0 +1,62 @@
+
+.list {
+    .list-topics {
+        display: flex;
+        justify-content: center;
+        .mat-form-field {
+            margin: 0 20px;
+        }
+    }
+}
+.container {
+    display: flex;
+    padding: 0 40px;
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .mat-form-field  {
+                width: 80%;
+                margin: 20px 0;
+            }
+        }
+    }
+    .feature {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        .preview-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            .mat-card {
+                width: 100%;
+            }
+            .pre-img {
+                height: 100%;
+
+                .mat-card-content {
+                    text-align: center;
+                }
+                img {
+                    width: 50%;
+                    text-align: center;
+                }
+                
+            }
+        }
+        .mat-accordion {
+            width: 100%;
+        }
+    }
+}
+.container-img {
+    height: 450px;
+}
